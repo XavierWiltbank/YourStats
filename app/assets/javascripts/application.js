@@ -16,6 +16,7 @@
 
 //= require bootstrap-sprockets
 //= require jquery
+//= require highcharts
 //= require_tree .
 
 

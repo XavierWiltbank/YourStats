@@ -131,22 +131,98 @@
 
   <!-- Second Featurette -->
   <div class="featurette" id="services">
-    <img class="featurette-image img-circle img-responsive pull-left" src="http://placehold.it/500x500">
-    <h2 class="featurette-heading">The Second Heading
-      <span class="text-muted">Is Pretty Cool Too.</span>
-    </h2>
-    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-  </div>
 
-  <hr class="featurette-divider">
+    <div class="row">
+      <div id="individuals_chart" class="col-md-6">
+        <script type="text/javascript" charset="utf-8">
+            $(function() {
+                new Highcharts.Chart({
+                    chart:{
+                        renderTo: "individuals_chart"
+                    },
+                    title:{
+                        text: "Change in Float Responses"
+                    },
+                    xAxis:{
+                        type: "floatResponse"
+                    },
+                    yAxis:{
+                        title: {
+                            text: "floats"
+                        }
+                    },
+                    series: [{
+                        name:"Float Responses",
+                        data:[
+                            <% @individuals.each do |i|%>
+                            <%= i.floatResponse %>,
+                            <% end %>
+                        ]
+                    }]
+                });
+            });
+        </script>
+      </div>
+      <div id="BooleanChart" class="col-md-6">
+        <script type="text/javascript" charset="utf-8">
+            $(function () {
+                new Highcharts.Chart({
+                    chart: {
+                        plotBackgroundColor: null,
+                        plotBorderWidth: null,
+                        plotShadow: false,
+                        renderTo:"BooleanChart"
+                    },
+                    title: {
+                        text: 'Boolean Responses'
+                    },
+                    tooltip: {
+                        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                    },
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',
+                            dataLabels: {
+                                enabled: true,
+                                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                                style: {
+                                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                                }
+                            }
+                        }
+                    },
+                    series: [{
+                        type: 'pie',
+                        name: 'Boolean Responses',
+                        data: [
+                            ['True',
+                                <% x = 0 %>
+                                <% @individuals.each do |i|%>
+                                    <% if(i.booleanResponse == true) %>
+                                        <% x = x + 1%>
+                                    <%end%>
+                                <%end%>
+                                <%= x %>
+                            ],
+                            ['False',
+                                <% x = 0 %>
+                                <% @individuals.each do |i|%>
+                                    <% if(i.booleanResponse == false) %>
+                                        <% x = x + 1%>
+                                    <%end%>
+                                <%end%>
+                                <%= x %>
+                            ],
+                        ]
+                    }]
+                });
+            });
+        </script>
+      </div>
 
-  <!-- Third Featurette -->
-  <div class="featurette" id="contact">
-    <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
-    <h2 class="featurette-heading">The Third Heading
-      <span class="text-muted">Will Seal the Deal.</span>
-    </h2>
-    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    </div>
+
   </div>
 
   <hr class="featurette-divider">
