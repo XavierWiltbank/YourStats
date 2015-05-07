@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  floatResponse: 1.5
+  booleanResponse: false
+  textResponse: MyText
+
+two:
+  floatResponse: 1.5
+  booleanResponse: false
+  textResponse: MyText

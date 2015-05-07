@@ -5,3 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+  individuals =
+  Individual.create([{floatResponse: "1",booleanResponse: true, textResponse: "Yes"}])
+  Individual.create([{floatResponse: "2",booleanResponse: false,textResponse: "No"}])
+  Individual.create([{floatResponse: "3",booleanResponse: false,textResponse: "Yes"}])
+  Individual.create([{floatResponse: "4.5",booleanResponse: true,textResponse: "No"}])
