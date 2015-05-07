@@ -42,6 +42,51 @@
 
 <!-- Page Content -->
 <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>List Individuals</h1>
+      <%= link_to 'New Individual', new_individual_path %>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-xs-3">
+        <h2>DB id</h2>
+      </div>
+      <div class="col-xs-3">
+        <h2>Float Response </h2>
+      </div>
+      <div class="col-xs-3">
+        <h2> Boolean Response </h2>
+      </div>
+      <div class="col-xs-3">
+       <h2> Text Response </h2>
+      </div>
+  </div>
+  <% @individuals.each do |i| %>
+      <div class="row">
+        <div class="col-xs-3">
+          <%= i.id %> |
+          <%= link_to 'Show', individual_path(i) %> |
+          <%= link_to 'Edit', individual_path(i) %> |
+          <%= link_to 'Destroy', individual_path(i), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+        <div class="col-xs-3">
+          <%= i.floatResponse %>
+        </div>
+        <div class="col-xs-3">
+          <%= i.booleanResponse %>
+        </div>
+        <div class="col-xs-3">
+          <%= i.textResponse %>
+        </div>
+      </div>
+  <%end%>
+
+  <% if false %>
+      <div><%= link_to 'Show', individual_path(individual) %></div>
+      <div><%= link_to 'Edit', individual_path(individual) %></div>
+      <div><%= link_to 'Destroy', individual_path(individual), method: :delete, data: { confirm: 'Are you sure?' } %></div>
+  <%end%>
 
   <hr class="featurette-divider">
 
@@ -82,7 +127,7 @@
   <footer>
     <div class="row">
       <div class="col-lg-12">
-        <p>Copyright &copy; Your Website 2014</p>
+        <p>YourStats</p>
       </div>
     </div>
   </footer>

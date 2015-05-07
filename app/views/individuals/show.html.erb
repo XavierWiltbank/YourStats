@@ -1,0 +1,17 @@
+<p>
+  <strong>Title:</strong>
+  <%= @individual.individualID %>
+</p>
+<p>
+  <strong>Boolean Response:</strong>
+  <%= @individual.booleanResponse %>
+</p>
+<p>
+  <strong>Text Response:</strong>
+  <%= @individual.textResponse %>
+</p>
+<%= link_to 'Edit', edit_individual_path(@individual) %> |
+<%= link_to 'Back', individuals_path %> |
+<%= link_to 'Destroy', individual_path(@individual),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %>

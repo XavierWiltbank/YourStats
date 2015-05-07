@@ -1,0 +1,14 @@
+<%= form_for @individuals.each do |individual| %>
+    <div class="row">
+      <div class="col-md-4">
+        <%=individual.id%> ||
+        <%=individual.floatResponse %>
+      </div>
+      <div class="col-md-4">
+        <%=individual.textResponse %>
+      </div>
+      <div class="col-md-4">
+        <%=individual.booleanResponse %>
+      </div>
+    </div>
+<% end %>
