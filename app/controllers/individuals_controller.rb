@@ -43,6 +43,6 @@ class IndividualsController < ApplicationController
 
   private
   def individual_params
-    params.require(:individual).permit(:individualID, :textResponse, :booleanResponse)
+    params.require(:individual).permit(:floatResponse, :textResponse, :booleanResponse)
   end
 end

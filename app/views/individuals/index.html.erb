@@ -1,3 +1,4 @@
+<%= javascript_include_tag 'application' %>
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
@@ -92,11 +93,38 @@
 
   <!-- First Featurette -->
   <div class="featurette" id="about">
-    <img class="featurette-image img-circle img-responsive pull-right" src="http://placehold.it/500x500">
-    <h2 class="featurette-heading">This First Heading
-      <span class="text-muted">Will Catch Your Eye</span>
-    </h2>
-    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+    <div class="row">
+      <div class="col-xs-2">
+        <p>Averate Float Response</p>
+        <%= @individuals.average(:floatResponse)%>
+      </div>
+      <div class="col-xs-2">
+        <p>Maximum Float Response</p>
+        <%= @individuals.maximum(:floatResponse)%>
+      </div>
+      <div class="col-xs-2">
+        <p>Minimum Float Response</p>
+        <%= @individuals.minimum(:floatResponse)%>
+      </div>
+      <div class="col-xs-2">
+        <p>Distinct Float Response</p>
+        <%= @individuals.distinct.count(:floatResponse)%>
+      </div>
+      <div class="col-xs-2">
+        <p>Distinct Text Response</p>
+        <%= @individuals.distinct.count(:textResponse)%>
+      </div>
+      <div class="col-xs-2">
+        <p>True Count Boolnean Response</p>
+        <% x = 0 %>
+        <% @individuals.each do |i|%>
+            <% if(i.booleanResponse == true) %>
+                <% x = x + 1%>
+            <%end%>
+        <%end%>
+        <%= x %>
+      </div>
+    </div>
   </div>
 
   <hr class="featurette-divider">
