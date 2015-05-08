@@ -115,7 +115,7 @@
         <%= @individuals.distinct.count(:textResponse)%>
       </div>
       <div class="col-xs-2">
-        <p>True Count Boolnean Response</p>
+        <p>True Count Boolean Response</p>
         <% x = 0 %>
         <% @individuals.each do |i|%>
             <% if(i.booleanResponse == true) %>
