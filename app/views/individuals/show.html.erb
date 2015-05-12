@@ -1,17 +1,30 @@
-<p>
-  <strong>Float Response:</strong>
-  <%= @individual.floatResponse %>
-</p>
-<p>
-  <strong>Boolean Response:</strong>
-  <%= @individual.booleanResponse %>
-</p>
-<p>
-  <strong>Text Response:</strong>
-  <%= @individual.textResponse %>
-</p>
-<%= link_to 'Edit', edit_individual_path(@individual) %> |
-<%= link_to 'Back', individuals_path %> |
-<%= link_to 'Destroy', individual_path(@individual),
-            method: :delete,
-            data: { confirm: 'Are you sure?' } %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-6">
+      <p>
+        <h2>Float Response:</h2>
+        <%= @individual.floatResponse %>
+      </p>
+      <p>
+        <h2>Boolean Response:</h2>
+        <%= @individual.booleanResponse %>
+      </p>
+      <p>
+        <h2>Text Response:</h2>
+        <%= @individual.textResponse %>
+      </p>
+      <%= link_to 'Edit', edit_individual_path(@individual) %> |
+      <%= link_to 'Back', individuals_path %> |
+      <%= link_to 'Destroy', individual_path(@individual),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+    </div>
+    <div class="col-md-3">
+
+    </div>
+  </div>
+</div>
+
