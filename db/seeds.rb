@@ -18,5 +18,5 @@
   Individual.create([{floatResponse: "1.3",booleanResponse: true, textResponse: "Yes"}])
   Individual.create([{floatResponse: "20",booleanResponse: false,textResponse: "No"}])
   Individual.create([{floatResponse: "13",booleanResponse: false,textResponse: "Yes"}])
-  Individual.create([{floatResponse: "-4.5",booleanResponse: true,textResponse: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,"}])
+  Individual.create([{floatResponse: "-4.5",booleanResponse: true,textResponse: "Lorem ipsum dolor"}])
 
