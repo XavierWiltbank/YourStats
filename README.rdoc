@@ -1,28 +1,6 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+YourStats is a Ruby on Rails application that allows users to upload individual responses to a website
+and view those responses displayed in text and graphical formats. 
+This project shows what can be accomplished by combining many different web based development tools,
+including Ruby on Rails, HighCharts, the Bootstrap framework, and a PostgreSQL database. 
+It was developed using Ubuntu  and RubyMine, 
+utilizing git version control hosted by GitHub and built and hosted using Heroku.
